@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Resume Analyzer{% endblock %}
+{% block content %}
+
+<section class="hero">
+    <h1>AI Resume Analyzer</h1>
+
+    <p>Upload your resume and get useful insights about your skills, education, projects and overall resume quality.</p>
+    <a href="{{url_for('resume.upload')}}" class="btn">Analyze My Resume</a>
+</section>
+{% endblock %}

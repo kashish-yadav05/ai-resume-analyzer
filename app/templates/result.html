@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+
+{% block title %}Resume Analysis - AI Resume Analyzer{% endblock %}
+
+{% block content %}
+
+<div class="result-container">
+     <div class="result-header">
+        <h1>Resume Analysis</h1>
+        <p>See how well your resume matches your target role.</p>
+    </div>
+
+    <div class="analysis-form">
+        <h2>Analyze Your Resume</h2>
+
+        <form method="POST"
+              action="{{ url_for('resume.analyze', resume_id=resume.id) }}">
+            <div class="form-group">
+                <label for="job_role">Target Job Role</label>
+                <input type="text" id="job_role" name="job_role" placeholder="e.g. Python Backend Developer" required>
+            </div>
+
+            <div class="form-group">
+                <label for="job_description">Job Description <span>(Optional)</span></label>
+                <textarea id="job_description" name="job_description" rows="8" placeholder="Paste the job description here..."></textarea>
+            </div>
+
+            <button type="submit" class="btn">🤖 Analyze with AI</button>
+        </form>
+    </div>
+
+    {% if analysis %}
+        <div class="analyzed-role">
+             <p>Analysis for: <strong>{{ analysis.job_role }}</strong></p>
+        </div>
+        
+        <div class="score-card">
+            <h2>Resume Match Score</h2>
+            <div class="score-circle">
+                <span>{{ analysis.match_score }}%</span>
+            </div>
+
+            <p class="score-label">Match with {{ analysis.job_role }}</p>
+        </div>
+      
+        <div class="result-grid">
+
+            <div class="result-section">
+                <h2>💪 Strengths</h2>
+                {% if analysis.strengths %}
+                    <ul>
+                        {% for strength in analysis.strengths %}
+                            <li>{{ strength }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No strengths available.</p>
+                {% endif %}
+            </div>
+
+            <div class="result-section">
+                <h2>⚠️ Missing Skills</h2>
+                {% if analysis.missing_skills %}
+                    <ul>
+                        {% for skill in analysis.missing_skills %}
+                            <li>{{ skill }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No missing skills detected.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="result-section">
+            <h2>📌 Weaknesses</h2>
+            {% if analysis.weaknesses %}
+                <ul>
+                    {% for weakness in analysis.weaknesses %}
+                        <li>{{ weakness }}</li>
+                    {% endfor %}
+                </ul>
+
+            {% else %}
+                <p>No weaknesses identified.</p>
+            {% endif %}
+
+        </div>
+
+        <div class="result-section">
+            <h2>💡 Suggestions</h2>
+            {% if analysis.suggestions %}
+                <ul>
+                    {% for suggestion in analysis.suggestions %}
+                        <li>{{ suggestion }}</li>
+                    {% endfor %}
+                </ul>
+
+            {% else %}
+                <p>No suggestions available.</p>
+            {% endif %}
+        </div>
+
+        <div class="result-section">
+            <h2>🎯 Recommended Skills</h2>
+            {% if analysis.recommended_skills %}
+               <div class="skill-list">
+                    {% for skill in analysis.recommended_skills %}
+                        <span class="skill-badge">{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p>No recommendations available.</p>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    <a href="{{ url_for('resume.upload') }}" class="btn">Analyze Another Resume</a>
+</div>
+{% endblock %}

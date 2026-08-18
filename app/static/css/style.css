@@ -1,0 +1,407 @@
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+
+nav {
+    background: #1f2937;
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #60a5fa;
+}
+
+/* MAIN */
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+/* HEADINGS */
+
+h1 {
+    margin-bottom: 15px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+/* BUTTON */
+
+.btn {
+    display: inline-block;
+    padding: 12px 22px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* FLASH MESSAGES */
+
+.flash {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 12px;
+    background: #dbeafe;
+    color: #1e40af;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* FORMS */
+
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    max-width: 500px;
+    margin: 30px auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: inherit;
+    background: white;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* HOME PAGE */
+
+.hero {
+    text-align: center;
+    padding: 70px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* UPLOAD PAGE */
+
+.upload-container {
+    text-align: center;
+    max-width: 650px;
+    margin: 50px auto;
+}
+
+.upload-container h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.upload-container p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.upload-container form {
+    text-align: left;
+}
+
+/* ANALYSIS FORM */
+
+.analysis-form {
+    margin-bottom: 30px;
+}
+
+.analysis-form h2 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.analysis-form form {
+    max-width: 700px;
+}
+
+.analysis-form span {
+    color: #777;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+.analysis-form .btn {
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* RESULT PAGE */
+
+.result-container {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.result-container > h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+/* RESULT PAGE */
+
+.result-container {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.result-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.result-header h1 {
+    margin-bottom: 8px;
+}
+
+.result-header p {
+    color: #6b7280;
+    font-size: 16px;
+}
+/* Score */
+
+.score-card {
+    background: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.score-card h2 {
+    color: #374151;
+    font-size: 20px;
+}
+
+.score {
+    font-size: 48px;
+    font-weight: bold;
+    color: #2563eb;
+    margin-top: 10px;
+}
+.score-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 20px auto;
+    border: 10px solid #dbeafe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+}
+
+.score-circle span {
+    font-size: 36px;
+    font-weight: bold;
+    color: #2563eb;
+}
+
+.score-label {
+    color: #6b7280;
+    font-size: 15px;
+}
+
+/* Result sections */
+
+.result-section {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.result-section h2 {
+    margin-bottom: 15px;
+    color: #1f2937;
+}
+
+.result-section ul {
+    padding-left: 25px;
+}
+
+.result-section li {
+    margin-bottom: 8px;
+}
+
+.result-section p {
+    color: #6b7280;
+}
+
+.result-section li::marker {
+    color: #2563eb;
+}
+
+.result-section {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.result-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-badge {
+    display: inline-block;
+    padding: 8px 14px;
+    background: #dbeafe;
+    color: #1e40af;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+/* Analyze another resume button */
+
+.result-container > .btn {
+    display: block;
+    width: fit-content;
+    margin: 30px auto;
+}
+
+/* RESPONSIVE UI */
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        width: 94%;
+        margin: 25px auto;
+    }
+
+    .hero {
+        padding: 45px 20px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    .upload-container {
+        margin: 30px auto;
+    }
+
+    .result-container {
+        margin: 20px auto;
+    }
+
+    .score {
+        font-size: 40px;
+    }
+
+    .result-grid {
+    grid-template-columns: 1fr;
+    }
+}
